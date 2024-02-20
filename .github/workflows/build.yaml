@@ -1,0 +1,36 @@
+name: Build kategorie pdf
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update + install PDFlatex and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-fonts-recommended
+          sudo apt-get install -y texlive-fonts-extra
+          sudo apt-get install -y texlive-latex-base
+          sudo apt-get install -y texlive-latex-extra
+      - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: "3.1.11"
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+      - name: Pandoc version check
+        run: pandoc --version
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Download statement.lua
+        run: |
+          git clone https://github.com/dialoa/statement ~/statement
+      - name: Compile Markdown to PDF
+        run: |
+          pandoc -L ~/statement/statement.lua -s kategorie.md -o kategorie.pdf
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-pdf
+          path: kategorie.pdf
+
