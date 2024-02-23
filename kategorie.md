@@ -27,6 +27,14 @@ statement-kinds:
         style: definition
         label: Věta
         counter: tvrzeni
+    pozn:
+        style: remark
+        label: Poznámka
+        counter: none
+    dk:
+        style: proof
+        label: Důkaz
+        counter: none
 ---
 # Úvod do teorie kategorií
 
@@ -128,4 +136,87 @@ ___
 
 \begin{center}
 Přednáška 2
+\end{center}
+
+:::definice
+Je-li $\alpha \in K(a, b)$, pak značíme $dom \alpha = a$, $codom \alpha = b$. Jsou-li $\alpha, \beta in mor K$, pak je nazveme *paralelní*, pokud $dom \alpha = dom \beta$ a $codom \alpha = codom \beta$.
+:::
+
+:::tvrzeni
+Ať $K$ kategorie, pak 
+
+1) Pro každý $a \in ob K$, pak $1_a$ je monomorfismus, epimorfismus a izomorfismus.
+
+2) Jsou-li $\alpha, \beta$ monomorfismy a $codom \alpha = dom \beta$, pak je $\beta \alpha$ monomorfismus. Totéž pro sekce, resp. retrakce.
+
+3) Je-li $\alpha \beta$ monomorfismus (epimorfismus), pak je $\alpha$ rovněž monomorfismus ($\beta$ epimorfismus).
+
+4) Sekce je monomorfismus, retrakce je epimorfismus, a tedy izomorfismus je mono- i epi- morfismus, tj *bimorfismus*.
+:::
+
+:::proof
+Důkaz je snadný. 4) plyne z 3) a 1).
+:::
+
+:::definice
+Ať $K$ kategorie, definujeme kategorii $K^{op}$, *duální (opačná)* ke $K$, tkž. $ob K = ob K^{op}$, $\forall a, b \in ob K^{op}: K^{op}(a, b) = K(b, a)$. Složení $\alpha \beta$ v $K^{op}$ odpovídá $\alpha \beta$ v $K$.
+
+> $K^{op}$ vznikne z K otočením orientace šipek.
+:::
+
+:::priklad
+Monomorfismy (resp. sekce) v $K$ jsou právě epimorfismy (resp. retrakce) v $K^{op}$.
+:::
+
+:::priklad
+1) V $Set$ monomorfismy jsou prostá zobrazení, epimorfismy jsou surjektivní zobrazení. Retrakce jsou epimorfismy, právě tehdy když platí axiom výběru. Sekce jsou monomorfismy s neprázdnou doménou a $1_\emptyset$. monomorfismus + epimorfismus = izomorfismus.
+
+2) V $Ab$, obecněji v $Mod-R$, $R$ okruh, platí, že monomorfismy jsou prosté morfismy, epimorfismy jsou surjektivní morfismy.
+
+3) V $Top$ jako výše.
+
+4) V $Grp$ jako výše, ale pro epimorfismy není triviální ukázat, že jsou surjektivní.
+
+5) $id_\mathbb{Z}: \mathbb{Z} \hookrightarrow \mathbb{Q}$ není sekce, protože $\mathbb{Q}$ je divizibilní, ale $\mathbb{Z}$ není.
+
+6) $\mathbb{Q} \twoheadrightarrow \mathbb{Q}/ \mathbb{Z}$ není retrakce.
+
+7) Ve 2) a 4) mono + epi = izo, ale v 3) tomu tak není.
+
+8) $Div$ je kategorie divizibilních abelovských grup. Epimorfismy jsou surjektivní morfismy, monomorfismy jsou morfismy $\alpha$, kde $Ker \alpha$ je redukovaná grupa, tj. nemá netriviální divizibilní podgrupy. $\mathbb{Q} \twoheadrightarrow \mathbb{Q}/ \mathbb{Z}$ je monomorfismus a epimorfismus, ale není izomorfismus.
+
+9) $TF$ je kategorie beztorzních abelovských grup. Pak epimorfismy jsou CV. ($\mathbb{Z} \hookrightarrow \mathbb{Q}$).
+
+10) V kategorii $Haus$ jsou monomorfismy prosté morfismy. Epimorfismy jsou spojitá zobrazení na hustou část. $\mathbb{Q} \hookrightarrow \mathbb{R}$ je epimorfismus.
+:::
+
+:::definice
+Kategorie se nazývá *balancovaná*, pokud "mono + epi je izo".
+:::
+
+:::definice
+Buď $K$, $H$ kategorie, $F: K \rightarrow H$ se nazývá *(kovariantní) funktor*, sestává-li se z:
+
+- $F: ob K \rightarrow ob H$ jakožto objektová část funktoru
+
+- $\forall a, b \in K, \alpha \in K(a, b): F(\alpha) \in H(\alpha(a), \alpha(b))$. Navíc splňuje $F(1_a) = 1_{F(a)}$ a $F(\beta \alpha) = F(\beta) F(\alpha)$, je-li $\beta \alpha$ definováno v $K$.
+
+$G: K \rightarrow H$ je *kontravariantní funktor*, pokud $G(\beta\alpha) = G(\alpha)G(\beta)$, tj. "G otáčí šipky".
+:::
+
+:::pozn
+Občas se ztotožňuje kontravariantní funktor $G: K \rightarrow H$ s odpovídajícím kovariantním funktorem $K^{op} \rightarrow H$ ($K \rightarrow H^{op}$).
+:::
+
+:::priklad
+1) $P^+: Set \rightarrow Set$. $\forall a \in ob K: P^+(a) = \mathcal{P}(a)$, $\alpha: a \rightarrow b: P^+(a): \mathcal{P}(a) \rightarrow \mathcal{P}(b)$, tkž $x \rightarrow \alpha[x] = \{ \alpha(p) | p \in x \} \in \mathcal{P}(b)$.
+
+
+2) $P^-: Set \rightarrow Set$. $P^-(a) = P^+(a) = \mathcal{P}(a)$. $P^-(\alpha): \mathcal{P}(b) \rightarrow \mathcal{P}(a)$, tkž $y \rightarrow \{ p \in a | \alpha (p) \in y \}$.
+:::
+
+___
+
+\begin{center}
+Přednáška 3
 \end{center}
