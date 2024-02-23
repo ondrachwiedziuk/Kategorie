@@ -1,7 +1,7 @@
 ---
 nocite: '@*'
 citeproc: true
-documentclass: scrartcl
+documentclass: report
 statement-kinds:
     definice:
         style: definition
