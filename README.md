@@ -1,4 +1,4 @@
-# Skripta pro Přednášku Úvod do teorie kategorií 2023/24
+# Skripta pro Přednášku [Úvod do teorie kategorií](https://wiki.matfyz.cz/NMAG336) 2023/24
 Aktuální verzi lze stáhnout z [actions repozitáře](https://github.com/ondrachwiedziuk/Kategorie/actions).
 
 ## Jak psát
