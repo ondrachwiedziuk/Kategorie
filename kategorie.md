@@ -2,6 +2,8 @@
 nocite: '@*'
 citeproc: true
 documentclass: report
+header-includes:
+  - \newcommand{\K}{\mathcal{K}}
 statement-kinds:
     definice:
         style: definition
@@ -47,27 +49,27 @@ Přednáška 1
 Pojem kategorie se poprvé objevil v článku "On Natural Equivalences" (1945), MacLine, Eilenberg
 
 :::definice
-Řekneme, že $K$ je *kategorie*, je-li dána třída objektů kategorie $K$, značíme $ob\:K$, přičemž pro každé $a, b \in ob\:K$ je dána množina $K(a, b)$ a vlastností $\forall a, b \in ob\: K$ $: (a,b) \neq (a',b') \implies K(a, b) \cap K(a', b') = \emptyset$.
+Řekneme, že $\K$ je *kategorie*, je-li dána třída objektů kategorie $\K$, značíme $ob\:\K$, přičemž pro každé $a, b \in ob\:\K$ je dána množina $\K(a, b)$ a vlastností $\forall a, b \in ob\: \K$ $: (a,b) \neq (a',b') \implies \K(a, b) \cap \K(a', b') = \emptyset$.
 
-Prvkům z $K(a,b)$ říkáme morfismy kategorie $K$ z $a$ do $b$, popř s domainem $a$ a codomainem $b$. Je-li $K$ jasná z kontextu, píšeme $\alpha: a \rightarrow b$ místo $\alpha \in K(a, b)$.
+Prvkům z $\K(a,b)$ říkáme morfismy kategorie $\K$ z $a$ do $b$, popř s domainem $a$ a codomainem $b$. Je-li $\K$ jasná z kontextu, píšeme $\alpha: a \rightarrow b$ místo $\alpha \in \K(a, b)$.
 
-Dále budeme $mor\: K = \bigcup K(a, b)$ značit třídu všech morfismů. Navíc musí platit axiomy:
+Dále budeme $mor\: \K = \bigcup \K(a, b)$ značit třídu všech morfismů. Navíc musí platit axiomy:
 
-1) $\forall a, b, c \in ob\:K, \alpha \in K(a, b), \beta \in K(b, c)$ je definováno složení $\beta \alpha \in K(a, c)$.
+1) $\forall a, b, c \in ob\:\K, \alpha \in \K(a, b), \beta \in \K(b, c)$ je definováno složení $\beta \alpha \in \K(a, c)$.
 
-2) $\forall a, b, c, d \in ob\:K, \alpha \in K(a ,b), \beta \in K(b, c), \gamma \in K(c, d)$ platí $\gamma(\beta\alpha) = (\gamma \beta)\alpha$. (Asociativita)
+2) $\forall a, b, c, d \in ob\:\K, \alpha \in \K(a ,b), \beta \in \K(b, c), \gamma \in \K(c, d)$ platí $\gamma(\beta\alpha) = (\gamma \beta)\alpha$. (Asociativita)
 
-3) $\forall a \in ob\:K \exists 1_a \in K(a, a) \forall \beta, \gamma \in mor\: K: \beta 1_a = \beta \land 1_a \gamma = \gamma$, je-li složení definováno.
+3) $\forall a \in ob\:\K \exists 1_a \in \K(a, a) \forall \beta, \gamma \in mor\: \K: \beta 1_a = \beta \land 1_a \gamma = \gamma$, je-li složení definováno.
 :::
 
-Místo $K(a, b)$ lze také zapsat jako $Hom_K (a, b)$
+Místo $\K(a, b)$ lze také zapsat jako $Hom_{\K} (a, b)$
 
-Někdy se nevyžaduje, aby $K(a, b)$ byla množina. Naše definice odpovídá *lokálně malé kategorii*.
+Někdy se nevyžaduje, aby $\K(a, b)$ byla množina. Naše definice odpovídá *lokálně malé kategorii*.
 
 V teorii kategorií nedává smysl studovat, či vůbec uvažovat, prvky objektů dané kategorie. (Lze to ve speciálních případech, např. kategorie $Set$ množin).
 
 :::definice
-Kategorie $K$ se nazývá *malá*, pokud $mor\: K$ tvoří množinu. Ekvivalentně v naší definici $ob\:K$ tvoří množinu. Jinak nazýváme $K$ velkou.
+Kategorie $\K$ se nazývá *malá*, pokud $mor\: \K$ tvoří množinu. Ekvivalentně v naší definici $ob\:\K$ tvoří množinu. Jinak nazýváme $\K$ velkou.
 :::
 
 :::priklad
@@ -101,31 +103,31 @@ Je-li $\alpha: a \rightarrow b$ morfismus v $Set$, $b\subset c \in ob\:Set$, pak
 :::priklad
 Malé kategorie
 
-- Prázdná kategorie $K$, kde $ob\: K = \emptyset$.
+- Prázdná kategorie $\K$, kde $ob\: \K = \emptyset$.
 
-- Jednoobjektová kategorie $ob\: K = \{ * \}$, $K(*, *)$ je libovolný monoid s operací $\circ$ a jednotkovým prvkem $1_*$.
+- Jednoobjektová kategorie $ob\: \K = \{ * \}$, $\K(*, *)$ je libovolný monoid s operací $\circ$ a jednotkovým prvkem $1_*$.
 
-- Ať $(a, \leq)$ je uspořádaná množina, pak $ob\: K = a$, pro $x, y \in a$ definuji $K(x,y) = \emptyset \iff x \nleq y$, jinak $K(x,y)$ bude jednoprvková. Pak $K$ je malá kategorie. Řekli bychom, že $K$ je "uspořádaná množina".
+- Ať $(a, \leq)$ je uspořádaná množina, pak $ob\: \K = a$, pro $x, y \in a$ definuji $\K(x,y) = \emptyset \iff x \nleq y$, jinak $\K(x,y)$ bude jednoprvková. Pak $\K$ je malá kategorie. Řekli bychom, že $\K$ je "uspořádaná množina".
 :::
 
 :::priklad
 Obskurní příklady
 
-- $ob\: K$ jsou body v rovině $\mathbb{R}^2$, morfismy jsou lomené čáry spojující domain a codomain.
+- $ob\: \K$ jsou body v rovině $\mathbb{R}^2$, morfismy jsou lomené čáry spojující domain a codomain.
 :::
 
 :::definice
-Ať $a, b \in K$, $\alpha \in K(a,b)$. Řekneme, že $\alpha$ je
+Ať $a, b \in \K$, $\alpha \in \K(a,b)$. Řekneme, že $\alpha$ je
 
-- *monomorfismus*, pokud $\forall c \in ob\: K, \beta, \gamma \in K(c, a), \beta \neq \gamma \implies \alpha \beta \neq \alpha \gamma$.
+- *monomorfismus*, pokud $\forall c \in ob\: \K, \beta, \gamma \in \K(c, a), \beta \neq \gamma \implies \alpha \beta \neq \alpha \gamma$.
 
-- *epimorfismus*, pokud $\forall c \in ob\: K, \beta, \gamma \in K(b, c), \beta \neq \gamma \implies \beta \alpha \neq \gamma \alpha$.
+- *epimorfismus*, pokud $\forall c \in ob\: \K, \beta, \gamma \in K(b, c), \beta \neq \gamma \implies \beta \alpha \neq \gamma \alpha$.
 
-- *sekce (štěpitelný monomorfismus)*, pokud $\exists \beta \in K(b, a)$ tak, že $\beta \alpha = 1_a$.
+- *sekce (štěpitelný monomorfismus)*, pokud $\exists \beta \in \K(b, a)$ tak, že $\beta \alpha = 1_a$.
 
-- *retrakce (štěpitelný epimorfismus)*, pokud $\exists \beta \in K(b, a)$, že $\alpha \beta = 1_b$.
+- *retrakce (štěpitelný epimorfismus)*, pokud $\exists \beta \in \K(b, a)$, že $\alpha \beta = 1_b$.
 
-- *izomorfismus*, pokud $\exists \beta \in K(b, a)$, že $\beta \alpha = 1_a \land \alpha \beta = 1_b$.
+- *izomorfismus*, pokud $\exists \beta \in \K(b, a)$, že $\beta \alpha = 1_a \land \alpha \beta = 1_b$.
 :::
 
 :::pozorovani
@@ -139,13 +141,13 @@ Přednáška 2
 \end{center}
 
 :::definice
-Je-li $\alpha \in K(a, b)$, pak značíme $dom \alpha = a$, $codom \alpha = b$. Jsou-li $\alpha, \beta in mor K$, pak je nazveme *paralelní*, pokud $dom \alpha = dom \beta$ a $codom \alpha = codom \beta$.
+Je-li $\alpha \in \K(a, b)$, pak značíme $dom \alpha = a$, $codom \alpha = b$. Jsou-li $\alpha, \beta \in mor \K$, pak je nazveme *paralelní*, pokud $dom \alpha = dom \beta$ a $codom \alpha = codom \beta$.
 :::
 
 :::tvrzeni
-Ať $K$ kategorie, pak 
+Ať $\K$ kategorie, pak
 
-1) Pro každý $a \in ob K$, pak $1_a$ je monomorfismus, epimorfismus a izomorfismus.
+1) Pro každý $a \in ob \K$, pak $1_a$ je monomorfismus, epimorfismus a izomorfismus.
 
 2) Jsou-li $\alpha, \beta$ monomorfismy a $codom \alpha = dom \beta$, pak je $\beta \alpha$ monomorfismus. Totéž pro sekce, resp. retrakce.
 
@@ -159,13 +161,13 @@ Důkaz je snadný. 4) plyne z 3) a 1).
 :::
 
 :::definice
-Ať $K$ kategorie, definujeme kategorii $K^{op}$, *duální (opačná)* ke $K$, tkž. $ob K = ob K^{op}$, $\forall a, b \in ob K^{op}: K^{op}(a, b) = K(b, a)$. Složení $\alpha \beta$ v $K^{op}$ odpovídá $\alpha \beta$ v $K$.
+Ať $\K$ kategorie, definujeme kategorii $\K^{op}$, *duální (opačná)* ke $K$, tkž. $ob K = ob \K^{op}$, $\forall a, b \in ob \K^{op}: K^{op}(a, b) = \K(b, a)$. Složení $\alpha \beta$ v $K^{op}$ odpovídá $\alpha \beta$ v $\K$.
 
-> $K^{op}$ vznikne z K otočením orientace šipek.
+> $\K^{op}$ vznikne z K otočením orientace šipek.
 :::
 
 :::priklad
-Monomorfismy (resp. sekce) v $K$ jsou právě epimorfismy (resp. retrakce) v $K^{op}$.
+Monomorfismy (resp. sekce) v $K$ jsou právě epimorfismy (resp. retrakce) v $\K^{op}$.
 :::
 
 :::priklad
@@ -195,21 +197,21 @@ Kategorie se nazývá *balancovaná*, pokud "mono + epi je izo".
 :::
 
 :::definice
-Buď $K$, $H$ kategorie, $F: K \rightarrow H$ se nazývá *(kovariantní) funktor*, sestává-li se z:
+Buď $\K$, $H$ kategorie, $F: K \rightarrow H$ se nazývá *(kovariantní) funktor*, sestává-li se z:
 
-- $F: ob K \rightarrow ob H$ jakožto objektová část funktoru
+- $F: ob \K \rightarrow ob H$ jakožto objektová část funktoru
 
-- $\forall a, b \in K, \alpha \in K(a, b): F(\alpha) \in H(\alpha(a), \alpha(b))$. Navíc splňuje $F(1_a) = 1_{F(a)}$ a $F(\beta \alpha) = F(\beta) F(\alpha)$, je-li $\beta \alpha$ definováno v $K$.
+- $\forall a, b \in \K, \alpha \in \K(a, b): F(\alpha) \in H(\alpha(a), \alpha(b))$. Navíc splňuje $F(1_a) = 1_{F(a)}$ a $F(\beta \alpha) = F(\beta) F(\alpha)$, je-li $\beta \alpha$ definováno v $\K$.
 
-$G: K \rightarrow H$ je *kontravariantní funktor*, pokud $G(\beta\alpha) = G(\alpha)G(\beta)$, tj. "G otáčí šipky".
+$G: \K \rightarrow H$ je *kontravariantní funktor*, pokud $G(\beta\alpha) = G(\alpha)G(\beta)$, tj. "G otáčí šipky".
 :::
 
 :::pozn
-Občas se ztotožňuje kontravariantní funktor $G: K \rightarrow H$ s odpovídajícím kovariantním funktorem $K^{op} \rightarrow H$ ($K \rightarrow H^{op}$).
+Občas se ztotožňuje kontravariantní funktor $G: \K \rightarrow H$ s odpovídajícím kovariantním funktorem $\K^{op} \rightarrow H$ ($\K \rightarrow H^{op}$).
 :::
 
 :::priklad
-1) $P^+: Set \rightarrow Set$. $\forall a \in ob K: P^+(a) = \mathcal{P}(a)$, $\alpha: a \rightarrow b: P^+(a): \mathcal{P}(a) \rightarrow \mathcal{P}(b)$, tkž $x \rightarrow \alpha[x] = \{ \alpha(p) | p \in x \} \in \mathcal{P}(b)$.
+1) $P^+: Set \rightarrow Set$. $\forall a \in ob \K: P^+(a) = \mathcal{P}(a)$, $\alpha: a \rightarrow b: P^+(a): \mathcal{P}(a) \rightarrow \mathcal{P}(b)$, tkž $x \rightarrow \alpha[x] = \{ \alpha(p) | p \in x \} \in \mathcal{P}(b)$.
 
 
 2) $P^-: Set \rightarrow Set$. $P^-(a) = P^+(a) = \mathcal{P}(a)$. $P^-(\alpha): \mathcal{P}(b) \rightarrow \mathcal{P}(a)$, tkž $y \rightarrow \{ p \in a | \alpha (p) \in y \}$.
