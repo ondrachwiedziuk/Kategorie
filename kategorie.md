@@ -64,7 +64,7 @@ Dále budeme $\mor \K = \bigcup \K(a, b)$ značit třídu všech morfismů. Nav�
 
 1) $\forall a, b, c \in \ob \K, \alpha \in \K(a, b), \beta \in \K(b, c)$ je definováno složení $\beta \circ \alpha \in \K(a, c)$.
 
-2) $\forall a, b, c, d \in \ob \K, \alpha \in \K(a ,b), \beta \in \K(b, c), \gamma \in \K(c, d)$ platí $\gamma(\beta \circ \alpha) = (\gamma \circ \beta)\alpha$. (Asociativita)
+2) $\forall a, b, c, d \in \ob \K, \alpha \in \K(a ,b), \beta \in \K(b, c), \gamma \in \K(c, d)$ platí $\gamma \circ (\beta \circ \alpha) = (\gamma \circ \beta)\circ \alpha$. (Asociativita)
 
 3) $\forall a \in \ob \K \exists 1_a \in \K(a, a) \forall \beta, \gamma \in \mor \K: \beta \circ 1_a = \beta \land 1_a \circ \gamma = \gamma$, je-li složení definováno.
 :::
