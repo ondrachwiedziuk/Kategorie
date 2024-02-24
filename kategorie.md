@@ -11,6 +11,7 @@ header-includes:
   - \newcommand{\codom}{\text{codom\,}}
   - \newcommand{\Hom}{\text{Hom\,}}
   - \newcommand{\cat}[1]{\mathtt{#1}}
+  - \newcommand*\quot[2]{{^{\textstyle#1}\big/_{\textstyle#2}}}
 statement-kinds:
     definice:
         style: definition
@@ -188,11 +189,11 @@ Monomorfismy (resp. sekce) v $K$ jsou právě epimorfismy (resp. retrakce) v $\K
 
 5) $id_\mathbb{Z}: \mathbb{Z} \hookrightarrow \mathbb{Q}$ není sekce, protože $\mathbb{Q}$ je divizibilní, ale $\mathbb{Z}$ není.
 
-6) $\mathbb{Q} \twoheadrightarrow \mathbb{Q}/ \mathbb{Z}$ není retrakce.
+6) $\mathbb{Q} \twoheadrightarrow \quot{\mathbb{Q}}{\mathbb{Z}}$ není retrakce.
 
 7) Ve 2) a 4) mono + epi = izo, ale v 3) tomu tak není.
 
-8) $\cat{Div}$ je kategorie divizibilních abelovských grup. Epimorfismy jsou surjektivní morfismy, monomorfismy jsou morfismy $\alpha$, kde $\Ker \alpha$ je redukovaná grupa, tj. nemá netriviální divizibilní podgrupy. $\mathbb{Q} \twoheadrightarrow \mathbb{Q}/ \mathbb{Z}$ je monomorfismus a epimorfismus, ale není izomorfismus.
+8) $\cat{Div}$ je kategorie divizibilních abelovských grup. Epimorfismy jsou surjektivní morfismy, monomorfismy jsou morfismy $\alpha$, kde $\Ker \alpha$ je redukovaná grupa, tj. nemá netriviální divizibilní podgrupy. $\mathbb{Q} \twoheadrightarrow \quot{\mathbb{Q}}{\mathbb{Z}}$ je monomorfismus a epimorfismus, ale není izomorfismus.
 
 9) $\cat{TF}$ je kategorie beztorzních abelovských grup. Pak epimorfismy jsou CV. ($\mathbb{Z} \hookrightarrow \mathbb{Q}$).
 
