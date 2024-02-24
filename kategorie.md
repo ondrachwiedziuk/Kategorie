@@ -214,7 +214,7 @@ $G: \K \rightarrow \mathcal{H}$ je *kontravariantní funktor*, pokud $G(\beta \c
 :::
 
 :::pozn
-Občas se ztotožňuje kontravariantní funktor $G: \K \rightarrow H$ s odpovídajícím kovariantním funktorem $\K^{op} \rightarrow H$ ($\K \rightarrow H^{op}$).
+Občas se ztotožňuje kontravariantní funktor $G: \K \rightarrow \mathcal{H}$ s odpovídajícím kovariantním funktorem $\K^{op} \rightarrow \mathcal{H}$ ($\K \rightarrow \mathcal{H}^{op}$).
 :::
 
 :::priklad
