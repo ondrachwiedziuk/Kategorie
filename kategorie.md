@@ -8,6 +8,8 @@ header-includes:
   - \newcommand{\mor}{\text{mor\,}}
   - \newcommand{\Ker}{\text{Ker\,}}
   - \newcommand{\dom}{\text{dom\,}}
+  - \newcommand{\Q}{\mathbb{Q}}
+  - \newcommand{\Z}{\mathbb{Z}}
   - \newcommand{\codom}{\text{codom\,}}
   - \newcommand{\Hom}{\text{Hom\,}}
   - \newcommand{\cat}[1]{\mathtt{#1}}
@@ -229,4 +231,161 @@ ___
 
 \begin{center}
 Přednáška 3
+\end{center}
+
+:::priklad
+3) $\K$ kategorie, $1_\K: \K \rightarrow \K$ identický funktor,  $1_\K(a) = 1$, $1_\K(\alpha) = \alpha$.
+
+4) $\K, \mathcal{H}$ kategorie, $a \in \ob \mathcal{H}$. Pak $\Delta(a) = \Delta_a: \K \rightarrow \mathcal{H}$ konstantní na $a$.
+
+5) $\K, \mathcal{H}$ jednoobjektové kategorie. Pak $F: \K \rightarrow \mathcal{H}$ funktory odpovídají monoidovým homomorfismům z $\K(*,*)$ do $\mathcal{H}(*,*)$.
+
+6) $\K$ kategorie vektorových prostorů $\cat{Mod-T}$, kde $T$ je těleso, s lineárními zobrazeními. Pak $*: \K \rightarrow \K$ kontravariantní funktor, který $\forall V \in \ob \K$ přiřadí $V^* = \Hom(V, T)$.
+
+    - Pro $\alpha \in \K(V, W): \alpha^*: W^* \rightarrow V^*$, $\alpha^*(f) = f \circ \alpha$.
+:::
+
+:::definice
+1) $\K$ kategorie, $a \in \ob \K$, $F_a: \K \rightarrow \cat{Set}$ funktor definovaný vztahy:
+
+    - $F_a(b) = \K(a, b)$
+
+    - $\alpha : b \rightarrow c$, $F_a(\alpha): \K(a, b) \rightarrow \K(a, c)$, tž $\beta \rightarrow \alpha \circ \beta$.
+    
+    To jest *kovariantní hom-funktor* určený objektem $a$. Značí se $K(a, -)$.
+
+2) $\K$ kategorie, $a \in \ob \K$. Uvažujme $F^a: \K \rightarrow \cat{Set}$ kontravariantní funktor definovaný:
+
+    - $F^a = \K(b, a)$
+
+    - $\alpha : b \rightarrow c$, $F^a(\alpha): \K(c, a) \rightarrow \K(b, a)$, tž $\beta \rightarrow \beta \circ \alpha$.
+    
+    To jest *kontravariantní hom-funktor* určený objektem $a$. Značí se $\K(-, a)$.
+
+3) Součin kategorií $\K_1, \K_2$ je kategorie $\K_1 \times \K_2$.
+
+    - $\ob \K_1 \times \K_2 = \ob \K_1 \times \ob \K_2$,
+
+    - $\mor \K_1 \times \K_2 = \mor \K_1 \times \mor \K_2$.
+
+    Pro libovolnou kategorii $\K$ máme k dispozici funktor $F: \K^{op} \times \K \rightarrow \cat{Set}$, tž $F(a, b) = \K(a, b)$, $F(\alpha, \beta): \K(a, b) \rightarrow \K(a', b')$, tž $\gamma \in \K(a, b) \rightarrow \beta \circ \gamma \circ \alpha$.
+
+    To jest *hom-bifunktor*, značí se $\K(-, -)$.
+:::
+
+:::definice
+Ať $F: \K \rightarrow \mathcal{H}$ funktor, $V$ vlastnost morfismů (např. býti monomorfismus). Pak řekneme, že $F$ *zachovává* morfismy s vlastností $V$, pokud $\forall \alpha \in \mor \K$ má vlastnost $V$ $\implies$ $F(\alpha)$ má vlastnost $V$.
+
+Ať $F: \K \rightarrow \mathcal{H}$ funktor, $V$ vlastnost morfismů (např. býti monomorfismus). Pak řekneme, že $F$ *reflektuje* morfismy s vlastností $V$, pokud $F(\alpha)$ má vlastnost $V$ $\implies$ $\forall \alpha \in \mor \K$ má vlastnost $V$.
+:::
+
+:::priklad
+$U: \cat{Top} \rightarrow \cat{Set}$ je *zapomínající* funktor, pokud $U((X, \tau)) = X$, $U(\alpha) = \alpha$.
+
+- $U$ nereflektuje izomorfismy: $\alpha:(\{a, b\}, diskrétní) \rightarrow (\{a, b\}, indiskrétní)$, tž $\alpha(a) = a$, $\alpha(b) = b$, což není homomorfismus, ale $F(\alpha) = id_{\{a, b\}} = 1_{\{a, b\}}$ je izomorfismus.
+:::
+
+:::pozorovani
+Každý funktor zachovává sekce i retrakce. Obecně nemusí zachovávat monomorfismy či epimorfismy.
+:::
+
+:::proof
+$F: \K \rightarrow \mathcal{H}$, $\alpha$ sekce v $\K$ $\implies$ $\exists \beta \in \mor \K$ $\beta \circ \alpha = 1_{\dom \alpha}$.
+$F(\beta) \circ F(\alpha) = F(\beta \circ \alpha) = F(1_{\dom \alpha}) = 1_{F(\dom \alpha)}$. Tedy $F(\alpha)$ je sekce.
+:::
+
+:::priklad
+$F: \cat{Div} \rightarrow \cat{Ab}$ identický na objektech i na morfismech. $F$ nezachovává monomorfismy.
+
+$\pi: \Q \rightarrow \quot{\Q}{\Z}$ přirozená projekce je monomorfismus v $\cat{Div}$.
+:::
+
+:::pozn
+Funktory lze skládat, skládání je asociativní, $F: \K \rightarrow \mathcal{H}$, $G: \mathcal{H} \rightarrow \mathcal{J}$:
+
+- $(G \circ F)(a) = G(F(a))$
+
+- $(G \circ F)(\alpha) = G(F(\alpha))$
+
+Skládání $\circ$ se občas vynechává.
+:::
+
+:::definice
+Ať $F: \K \rightarrow \mathcal{H}$ funktor. Řekněme, že $F$ je:
+
+- *Úplný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ surjektivně množinu $\K(a, b)$ na množinu $\mathcal{H}(F(a), F(b))$.
+
+- *Věrný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ prostě množinu $\K(a, b)$ do $\mathcal{H}(F(a), F(b))$.
+
+- *Prostý*, je-li věrný a navíc prostý na objektech vnoření. 
+:::
+
+:::definice
+$\K, \mathcal{H}$ kategorie. Řekneme, že $\mathcal{H}$ je *podkategorie* $\K$, pokud:
+
+- $\ob \mathcal{H} \subset \ob \K$ $\land$ $\forall a, b\in \ob \K \mathcal{H}(a, b) \subset \K(a ,b)$.
+
+- $Id: \mathcal{H} \rightarrow \K$, kde $Id(a) = a$, $Id(\alpha) = \alpha$ je funktor.
+
+Je-li navíc $Id$ je úplný funktor, pak $\mathcal{H}$ je *úplná podkategorie* v $\K$. Tj. $\mathcal{H}(a, b) = \K(a, b)$.
+:::
+
+:::priklad
+1) Zapomínající funktory obvykle nejsou úplné, ale jsou věrné.
+
+2) $\mathcal{P}^-:\cat{Set}^{op} \rightarrow \cat{Set}$ není úplný, ale je prostý.
+:::
+
+:::tvrzeni
+Ať $F: \K \rightarrow \mathcal{H}$ věrný a úplný funktor. Pak $F$ reflektuje sekce i retrakce, a tedy i izomorfismy.
+:::
+
+:::proof
+Důkaz jen pro retrakce. Ať $\alpha \in \K(a, b)$, tž $F(\alpha)$ je retrakce, tj existuje $\gamma \in \mathcal{H}(F(b), F(a))$, tž $F(\alpha) \circ \gamma = 1_{F(b)}$. $F$ je věrný a úplný, tedy existuje právě jedno $\beta \in \K(b, a): F(\beta) = \gamma$. Pak $F(\alpha \circ \beta) = F(\alpha) = F(\beta) = 1_{F(b)} = F(1_b)$. Jelikož $F$ je věrný, tak $\alpha \circ \beta = 1_b$. Tedy $\alpha$ je retrakce.
+:::
+
+:::priklad
+1) $\K(a, -)$ zachovává monomorfismy.
+
+2) $\K(-, b)$ kontravariantní posílá epimorfismy na monomorfismy.
+:::
+
+:::definice
+Buď $\K$ kategorie, pak řekneme, že $a\in\ob\K$ je *projektivní*, pokud $\K(a, -)$ zachovává epimorfismy. Dále $a\in\ob\K$ je *injektivní*, pokud funktor $K(-, a)$ zachovává epimorfismy.
+:::
+
+:::priklad
+V $\cat{Ab}$ jsou volné grupy projektivní objekty a divizibilní grupy jsou injektivní objekty.
+:::
+
+:::definice
+$\K$ kategorie, $a\in\ob\K$. Pak
+
+1) $a$ je *generátor (separátor)* v $\K$, je-li funktor $K(a, -)$ věrný.
+
+2) Řekneme, že $a$ je *kogenerátor (koseparátor)*, pokud je $\K(-,a)$ věrný.
+:::
+
+:::priklad
+1) V $\cat{Set}$ jsou generátor právě neprázdné množiny, kogenerátory jsou alpespoň dvouprvkové množiny.
+
+2) V $\cat{Ab}$ je generátor $\Z$, kogenerátor je $\quot{\Q}{\Z}$.
+:::
+
+:::definice
+*Konkrétní* kategorie je dvojice $(\K, U)$, kde $\K$ je kategorie a $U: \K \rightarrow \cat{Set}$ je věrný funktor.
+:::
+
+:::priklad
+$\cat{Ab}$, $\cat{Ring}$, $\cat{Top}$, \dots $U$ zapomínající funktor.
+:::
+
+:::priklad
+$\cat{Cat}$ je kategorií je kategorie malých kategoriích, morfismy jsou funktory mezi nimi.
+:::
+
+___
+
+\begin{center}
+Přednáška 4
 \end{center}
