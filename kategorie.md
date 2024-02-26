@@ -189,17 +189,17 @@ Monomorfismy (resp. sekce) v $K$ jsou právě epimorfismy (resp. retrakce) v $\K
 
 4) V $\cat{Grp}$ jako výše, ale pro epimorfismy není triviální ukázat, že jsou surjektivní.
 
-5) $id_\mathbb{Z}: \mathbb{Z} \hookrightarrow \mathbb{Q}$ není sekce, protože $\mathbb{Q}$ je divizibilní, ale $\mathbb{Z}$ není.
+5) $id_{\Z}: \Z \hookrightarrow \Q$ není sekce, protože $\Q$ je divizibilní, ale $\Z$ není.
 
-6) $\mathbb{Q} \twoheadrightarrow \quot{\mathbb{Q}}{\mathbb{Z}}$ není retrakce.
+6) $\Q \twoheadrightarrow \quot{\Q}{\Z}$ není retrakce.
 
 7) Ve 2) a 4) mono + epi = izo, ale v 3) tomu tak není.
 
-8) $\cat{Div}$ je kategorie divizibilních abelovských grup. Epimorfismy jsou surjektivní morfismy, monomorfismy jsou morfismy $\alpha$, kde $\Ker \alpha$ je redukovaná grupa, tj. nemá netriviální divizibilní podgrupy. $\mathbb{Q} \twoheadrightarrow \quot{\mathbb{Q}}{\mathbb{Z}}$ je monomorfismus a epimorfismus, ale není izomorfismus.
+8) $\cat{Div}$ je kategorie divizibilních abelovských grup. Epimorfismy jsou surjektivní morfismy, monomorfismy jsou morfismy $\alpha$, kde $\Ker \alpha$ je redukovaná grupa, tj. nemá netriviální divizibilní podgrupy. $\Q \twoheadrightarrow \quot{\Q}{\Z}$ je monomorfismus a epimorfismus, ale není izomorfismus.
 
-9) $\cat{TF}$ je kategorie beztorzních abelovských grup. Pak epimorfismy jsou CV. ($\mathbb{Z} \hookrightarrow \mathbb{Q}$).
+9) $\cat{TF}$ je kategorie beztorzních abelovských grup. Pak epimorfismy jsou CV. ($\Z \hookrightarrow \Q$).
 
-10) V kategorii $\cat{Haus}$ jsou monomorfismy prosté morfismy. Epimorfismy jsou spojitá zobrazení na hustou část. $\mathbb{Q} \hookrightarrow \mathbb{R}$ je epimorfismus.
+10) V kategorii $\cat{Haus}$ jsou monomorfismy prosté morfismy. Epimorfismy jsou spojitá zobrazení na hustou část. $\Q \hookrightarrow \mathbb{R}$ je epimorfismus.
 :::
 
 :::definice
@@ -317,7 +317,7 @@ Ať $F: \K \rightarrow \mathcal{H}$ funktor. Řekněme, že $F$ je:
 
 - *Věrný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ prostě množinu $\K(a, b)$ do $\mathcal{H}(F(a), F(b))$.
 
-- *Prostý*, je-li věrný a navíc prostý na objektech vnoření. 
+- *Prostý*, je-li věrný a navíc prostý na objektech vnoření.
 :::
 
 :::definice
@@ -363,11 +363,11 @@ $\K$ kategorie, $a\in\ob\K$. Pak
 
 1) $a$ je *generátor (separátor)* v $\K$, je-li funktor $K(a, -)$ věrný.
 
-2) Řekneme, že $a$ je *kogenerátor (koseparátor)*, pokud je $\K(-,a)$ věrný.
+2) Řekneme, že $a$ je *kogenerátor* (*koseparátor*), pokud je $\K(-,a)$ věrný.
 :::
 
 :::priklad
-1) V $\cat{Set}$ jsou generátor právě neprázdné množiny, kogenerátory jsou alpespoň dvouprvkové množiny.
+1) V $\cat{Set}$ jsou generátor právě neprázdné množiny, kogenerátory jsou alespoň dvouprvkové množiny.
 
 2) V $\cat{Ab}$ je generátor $\Z$, kogenerátor je $\quot{\Q}{\Z}$.
 :::
