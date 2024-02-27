@@ -4,6 +4,7 @@ citeproc: true
 documentclass: report
 header-includes:
   - \newcommand{\K}{\mathcal{K}}
+  - \renewcommand{\H}{\mathcal{H}}
   - \newcommand{\ob}{\text{ob\,}}
   - \newcommand{\mor}{\text{mor\,}}
   - \newcommand{\Ker}{\text{Ker\,}}
@@ -207,17 +208,17 @@ Kategorie se nazývá *balancovaná*, pokud "mono + epi je izo".
 :::
 
 :::definice
-Buď $\K$, $\mathcal{H}$ kategorie, $F: \K \rightarrow \mathcal{H}$ se nazývá *(kovariantní) funktor*, sestává-li se z:
+Buď $\K$, $\H$ kategorie, $F: \K \rightarrow \H$ se nazývá *(kovariantní) funktor*, sestává-li se z:
 
-- $F: \ob \K \rightarrow \ob \mathcal{H}$ jakožto objektová část funktoru
+- $F: \ob \K \rightarrow \ob \H$ jakožto objektová část funktoru
 
 - $\forall a, b \in \K, \alpha \in \K(a, b): F(\alpha) \in H(\alpha(a), \alpha(b))$. Navíc splňuje $F(1_a) = 1_{F(a)}$ a $F(\beta \circ \alpha) = F(\beta) \circ F(\alpha)$, je-li $\beta \alpha$ definováno v $\K$.
 
-$G: \K \rightarrow \mathcal{H}$ je *kontravariantní funktor*, pokud $G(\beta \circ \alpha) = G(\alpha) \circ G(\beta)$, tj. "G otáčí šipky".
+$G: \K \rightarrow \H$ je *kontravariantní funktor*, pokud $G(\beta \circ \alpha) = G(\alpha) \circ G(\beta)$, tj. "G otáčí šipky".
 :::
 
 :::pozn
-Občas se ztotožňuje kontravariantní funktor $G: \K \rightarrow \mathcal{H}$ s odpovídajícím kovariantním funktorem $\K^{op} \rightarrow \mathcal{H}$ ($\K \rightarrow \mathcal{H}^{op}$).
+Občas se ztotožňuje kontravariantní funktor $G: \K \rightarrow \H$ s odpovídajícím kovariantním funktorem $\K^{op} \rightarrow \H$ ($\K \rightarrow \H^{op}$).
 :::
 
 :::priklad
@@ -236,9 +237,9 @@ Přednáška 3
 :::priklad
 3) $\K$ kategorie, $1_\K: \K \rightarrow \K$ identický funktor,  $1_\K(a) = 1$, $1_\K(\alpha) = \alpha$.
 
-4) $\K, \mathcal{H}$ kategorie, $a \in \ob \mathcal{H}$. Pak $\Delta(a) = \Delta_a: \K \rightarrow \mathcal{H}$ konstantní na $a$.
+4) $\K, \H$ kategorie, $a \in \ob \H$. Pak $\Delta(a) = \Delta_a: \K \rightarrow \H$ konstantní na $a$.
 
-5) $\K, \mathcal{H}$ jednoobjektové kategorie. Pak $F: \K \rightarrow \mathcal{H}$ funktory odpovídají monoidovým homomorfismům z $\K(*,*)$ do $\mathcal{H}(*,*)$.
+5) $\K, \H$ jednoobjektové kategorie. Pak $F: \K \rightarrow \H$ funktory odpovídají monoidovým homomorfismům z $\K(*,*)$ do $\H(*,*)$.
 
 6) $\K$ kategorie vektorových prostorů $\cat{Mod-T}$, kde $T$ je těleso, s lineárními zobrazeními. Pak $*: \K \rightarrow \K$ kontravariantní funktor, který $\forall V \in \ob \K$ přiřadí $V^* = \Hom(V, T)$.
 
@@ -274,9 +275,9 @@ Přednáška 3
 :::
 
 :::definice
-Ať $F: \K \rightarrow \mathcal{H}$ funktor, $V$ vlastnost morfismů (např. býti monomorfismus). Pak řekneme, že $F$ *zachovává* morfismy s vlastností $V$, pokud $\forall \alpha \in \mor \K$ má vlastnost $V$ $\implies$ $F(\alpha)$ má vlastnost $V$.
+Ať $F: \K \rightarrow \H$ funktor, $V$ vlastnost morfismů (např. býti monomorfismus). Pak řekneme, že $F$ *zachovává* morfismy s vlastností $V$, pokud $\forall \alpha \in \mor \K$ má vlastnost $V$ $\implies$ $F(\alpha)$ má vlastnost $V$.
 
-Ať $F: \K \rightarrow \mathcal{H}$ funktor, $V$ vlastnost morfismů (např. býti monomorfismus). Pak řekneme, že $F$ *reflektuje* morfismy s vlastností $V$, pokud $F(\alpha)$ má vlastnost $V$ $\implies$ $\forall \alpha \in \mor \K$ má vlastnost $V$.
+Ať $F: \K \rightarrow \H$ funktor, $V$ vlastnost morfismů (např. býti monomorfismus). Pak řekneme, že $F$ *reflektuje* morfismy s vlastností $V$, pokud $F(\alpha)$ má vlastnost $V$ $\implies$ $\forall \alpha \in \mor \K$ má vlastnost $V$.
 :::
 
 :::priklad
@@ -290,7 +291,7 @@ Každý funktor zachovává sekce i retrakce. Obecně nemusí zachovávat monomo
 :::
 
 :::proof
-$F: \K \rightarrow \mathcal{H}$, $\alpha$ sekce v $\K$ $\implies$ $\exists \beta \in \mor \K$ $\beta \circ \alpha = 1_{\dom \alpha}$.
+$F: \K \rightarrow \H$, $\alpha$ sekce v $\K$ $\implies$ $\exists \beta \in \mor \K$ $\beta \circ \alpha = 1_{\dom \alpha}$.
 $F(\beta) \circ F(\alpha) = F(\beta \circ \alpha) = F(1_{\dom \alpha}) = 1_{F(\dom \alpha)}$. Tedy $F(\alpha)$ je sekce.
 :::
 
@@ -301,7 +302,7 @@ $\pi: \Q \rightarrow \quot{\Q}{\Z}$ přirozená projekce je monomorfismus v $\ca
 :::
 
 :::pozn
-Funktory lze skládat, skládání je asociativní, $F: \K \rightarrow \mathcal{H}$, $G: \mathcal{H} \rightarrow \mathcal{J}$:
+Funktory lze skládat, skládání je asociativní, $F: \K \rightarrow \H$, $G: \H \rightarrow \mathcal{J}$:
 
 - $(G \circ F)(a) = G(F(a))$
 
@@ -311,23 +312,23 @@ Skládání $\circ$ se občas vynechává.
 :::
 
 :::definice
-Ať $F: \K \rightarrow \mathcal{H}$ funktor. Řekněme, že $F$ je:
+Ať $F: \K \rightarrow \H$ funktor. Řekněme, že $F$ je:
 
-- *Úplný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ surjektivně množinu $\K(a, b)$ na množinu $\mathcal{H}(F(a), F(b))$.
+- *Úplný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ surjektivně množinu $\K(a, b)$ na množinu $\H(F(a), F(b))$.
 
-- *Věrný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ prostě množinu $\K(a, b)$ do $\mathcal{H}(F(a), F(b))$.
+- *Věrný*, pokud $\forall a, b \in \ob \K$ zobrazuje $F$ prostě množinu $\K(a, b)$ do $\H(F(a), F(b))$.
 
 - *Prostý*, je-li věrný a navíc prostý na objektech vnoření.
 :::
 
 :::definice
-$\K, \mathcal{H}$ kategorie. Řekneme, že $\mathcal{H}$ je *podkategorie* $\K$, pokud:
+$\K, \H$ kategorie. Řekneme, že $\H$ je *podkategorie* $\K$, pokud:
 
-- $\ob \mathcal{H} \subset \ob \K$ $\land$ $\forall a, b\in \ob \K \mathcal{H}(a, b) \subset \K(a ,b)$.
+- $\ob \H \subset \ob \K$ $\land$ $\forall a, b\in \ob \K \H(a, b) \subset \K(a ,b)$.
 
-- $Id: \mathcal{H} \rightarrow \K$, kde $Id(a) = a$, $Id(\alpha) = \alpha$ je funktor.
+- $Id: \H \rightarrow \K$, kde $Id(a) = a$, $Id(\alpha) = \alpha$ je funktor.
 
-Je-li navíc $Id$ je úplný funktor, pak $\mathcal{H}$ je *úplná podkategorie* v $\K$. Tj. $\mathcal{H}(a, b) = \K(a, b)$.
+Je-li navíc $Id$ je úplný funktor, pak $\H$ je *úplná podkategorie* v $\K$. Tj. $\H(a, b) = \K(a, b)$.
 :::
 
 :::priklad
@@ -337,11 +338,11 @@ Je-li navíc $Id$ je úplný funktor, pak $\mathcal{H}$ je *úplná podkategorie
 :::
 
 :::tvrzeni
-Ať $F: \K \rightarrow \mathcal{H}$ věrný a úplný funktor. Pak $F$ reflektuje sekce i retrakce, a tedy i izomorfismy.
+Ať $F: \K \rightarrow \H$ věrný a úplný funktor. Pak $F$ reflektuje sekce i retrakce, a tedy i izomorfismy.
 :::
 
 :::proof
-Důkaz jen pro retrakce. Ať $\alpha \in \K(a, b)$, tž $F(\alpha)$ je retrakce, tj existuje $\gamma \in \mathcal{H}(F(b), F(a))$, tž $F(\alpha) \circ \gamma = 1_{F(b)}$. $F$ je věrný a úplný, tedy existuje právě jedno $\beta \in \K(b, a): F(\beta) = \gamma$. Pak $F(\alpha \circ \beta) = F(\alpha) = F(\beta) = 1_{F(b)} = F(1_b)$. Jelikož $F$ je věrný, tak $\alpha \circ \beta = 1_b$. Tedy $\alpha$ je retrakce.
+Důkaz jen pro retrakce. Ať $\alpha \in \K(a, b)$, tž $F(\alpha)$ je retrakce, tj existuje $\gamma \in \H(F(b), F(a))$, tž $F(\alpha) \circ \gamma = 1_{F(b)}$. $F$ je věrný a úplný, tedy existuje právě jedno $\beta \in \K(b, a): F(\beta) = \gamma$. Pak $F(\alpha \circ \beta) = F(\alpha) = F(\beta) = 1_{F(b)} = F(1_b)$. Jelikož $F$ je věrný, tak $\alpha \circ \beta = 1_b$. Tedy $\alpha$ je retrakce.
 :::
 
 :::priklad
