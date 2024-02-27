@@ -351,7 +351,7 @@ Důkaz jen pro retrakce. Ať $\alpha \in \K(a, b)$, tž $F(\alpha)$ je retrakce,
 :::
 
 :::definice
-Buď $\K$ kategorie, pak řekneme, že $a\in\ob\K$ je *projektivní*, pokud $\K(a, -)$ zachovává epimorfismy. Dále $a\in\ob\K$ je *injektivní*, pokud funktor $K(-, a)$ zachovává epimorfismy.
+Buď $\K$ kategorie, pak řekneme, že $a\in\ob\K$ je *projektivní*, pokud $\K(a, -)$ zachovává epimorfismy. Dále $a\in\ob\K$ je *injektivní*, pokud funktor $\K(-, a)$ zachovává epimorfismy.
 :::
 
 :::priklad
