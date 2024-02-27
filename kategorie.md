@@ -11,6 +11,7 @@ header-includes:
   - \newcommand{\dom}{\text{dom\,}}
   - \newcommand{\Q}{\mathbb{Q}}
   - \newcommand{\Z}{\mathbb{Z}}
+  - \newcommand{\R}{\mathbb{R}}
   - \newcommand{\codom}{\text{codom\,}}
   - \newcommand{\Hom}{\text{Hom\,}}
   - \newcommand{\cat}[1]{\mathtt{#1}}
@@ -124,7 +125,7 @@ Malé kategorie
 :::priklad
 Obskurní příklady
 
-- $\ob \K$ jsou body v rovině $\mathbb{R}^2$, morfismy jsou lomené čáry spojující domain a codomain.
+- $\ob \K$ jsou body v rovině $\R^2$, morfismy jsou lomené čáry spojující domain a codomain.
 :::
 
 :::definice
@@ -200,7 +201,7 @@ Monomorfismy (resp. sekce) v $K$ jsou právě epimorfismy (resp. retrakce) v $\K
 
 9) $\cat{TF}$ je kategorie beztorzních abelovských grup. Pak epimorfismy jsou CV. ($\Z \hookrightarrow \Q$).
 
-10) V kategorii $\cat{Haus}$ jsou monomorfismy prosté morfismy. Epimorfismy jsou spojitá zobrazení na hustou část. $\Q \hookrightarrow \mathbb{R}$ je epimorfismus.
+10) V kategorii $\cat{Haus}$ jsou monomorfismy prosté morfismy. Epimorfismy jsou spojitá zobrazení na hustou část. $\Q \hookrightarrow \R$ je epimorfismus.
 :::
 
 :::definice
