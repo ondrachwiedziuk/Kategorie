@@ -3,12 +3,18 @@ Aktuální verzi lze stáhnout z [actions záložky repozitáře](https://github
 
 ## Lokální kompilace
 Skripta jsou napsaná v [Markdownu](https://www.markdownguide.org/), následně jsou konvertována do pdf pomocí [pandoc](https://pandoc.org/).
+Pro úspěšnou kompilaci je třeba mít lua filter [*statement*](https://github.com/dialoa/statement).
 
+**Instalace závislostí**  
 ```bash
-pandoc -L /path/to/statement/statement.lua -s kategorie.md -o kategorie.pdf
+make install
 ```
 
-Pro úspěšnou kompilaci je třeba mít lua filter [*statement*](https://github.com/dialoa/statement).
+**Kompilace pdf**  
+```bash
+make
+```
+(defaultuje na `make build`)
 
 ## Licence
 Tento text je publikován pod licencí [**CC BY-NC 4.0**](https://creativecommons.org/licenses/by-nc/4.0/).
