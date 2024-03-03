@@ -11,13 +11,10 @@ jobs:
           sudo apt-get install -y texlive-fonts-extra
           sudo apt-get install -y texlive-latex-base
           sudo apt-get install -y texlive-latex-extra
-      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Install pandoc
+        uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: "3.1.11"
-      - name: Install Pandoc
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc
       - name: Pandoc version check
         run: pandoc --version
       - name: Set up Git repository
@@ -29,28 +26,8 @@ jobs:
         run: |
           pandoc -L ~/statement/statement.lua -s kategorie.md -o kategorie.pdf
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: kategorie.pdf
           path: kategorie.pdf
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ github.run_number }}
-          release_name: Release v${{ github.run_number }}
-          draft: true
-          prerelease: true
-      - name: Upload PDF as release asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./kategorie.pdf
-          asset_name: kategorie.pdf
-          asset_content_type: application/pdf
-
+          compression-level: 0
