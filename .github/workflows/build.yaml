@@ -18,7 +18,7 @@ jobs:
       - name: Pandoc version check
         run: pandoc --version
       - name: Set up Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Download statement.lua
         run: |
           git clone https://github.com/dialoa/statement ~/statement
