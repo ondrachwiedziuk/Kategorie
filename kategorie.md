@@ -65,7 +65,7 @@ Přednáška 1
 Pojem kategorie se poprvé objevil v článku "On Natural Equivalences" (1945), MacLine, Eilenberg
 
 :::definice
-Řekneme, že $\K$ je *kategorie*, je-li dána třída objektů kategorie $\K$, značíme $\ob \K$, přičemž pro každé $a, b \in \ob \K$ je dána množina $\K(a, b)$ a vlastností $\forall a, b \in \ob \K$ $: (a,b) \neq (a',b') \implies \K(a, b) \cap \K(a', b') = \emptyset$.
+Řekneme, že $\K$ je *kategorie*, je-li dána třída objektů kategorie $\K$, značíme $\ob \K$, přičemž pro každé $a, b \in \ob \K$ je dána množina $\K(a, b)$ a vlastností $\forall a, b \in \ob \K$ $: (a,b) \neq (a^{\prime},b^{\prime}) \implies \K(a, b) \cap \K(a^{\prime}, b^{\prime}) = \emptyset$.
 
 Prvkům z $\K(a,b)$ říkáme morfismy kategorie $\K$ z $a$ do $b$, popř s domainem $a$ a codomainem $b$. Je-li $\K$ jasná z kontextu, píšeme $\alpha: a \rightarrow b$ místo $\alpha \in \K(a, b)$.
 
@@ -274,7 +274,7 @@ Přednáška 3
 
     - $\mor \K_1 \times \K_2 = \mor \K_1 \times \mor \K_2$.
 
-    Pro libovolnou kategorii $\K$ máme k dispozici funktor $F: \K^{op} \times \K \rightarrow \cat{Set}$, tž $F(a, b) = \K(a, b)$, $F(\alpha, \beta): \K(a, b) \rightarrow \K(a', b')$, tž $\gamma \in \K(a, b) \rightarrow \beta \circ \gamma \circ \alpha$.
+    Pro libovolnou kategorii $\K$ máme k dispozici funktor $F: \K^{op} \times \K \rightarrow \cat{Set}$, tž $F(a, b) = \K(a, b)$, $F(\alpha, \beta): \K(a, b) \rightarrow \K(a^{\prime}, b^{})$, tž $\gamma \in \K(a, b) \rightarrow \beta \circ \gamma \circ \alpha$.
 
     To jest *hom-bifunktor*, značí se $\K(-, -)$.
 :::
@@ -436,13 +436,13 @@ $\K$ kat, $F: \K \rightarrow \cat{Set}$. Pak je $F$ *reprezentovatelný*, pokud 
 :::priklad
 1) $F = 1_{\cat{Set}}$ má reprezentaci $(1, 0) = (\{ \emptyset \} \emptyset )$. $F \simeq \cat{Set}(\{ \emptyset \}, -)$.
 
-2) Ať $\K = \cat{Grp}$, nebo $\K = \cat{Ab}$, $U: \k \rightarrow \cat{Set}$ buď zapomínající. Pak $U$ má reprezentaci $(\Z, 1)$. Tedy $\K(\Z, -) \simeq U$.
+2) Ať $\K = \cat{Grp}$, nebo $\K = \cat{Ab}$, $U: \K \rightarrow \cat{Set}$ buď zapomínající. Pak $U$ má reprezentaci $(\Z, 1)$. Tedy $\K(\Z, -) \simeq U$.
 
 3) $U: \cat{Ring} \rightarrow \cat{Set}$ zapomínající. Pak $U$ má reprezentaci $(\Z[x], x)$.
 
 4) Uvažujme $P^-: \cat{Set}^{op} \rightarrow \cat{Set}$. Pak má reprezentaci $(\{ 0, 1 \}, \{ 1 \})$
 
-5) Naopak funktor $P^+: \cat{Set} \rightarrow \cat{Set}$ nemá univerzální dvojici. Sporem mějme $(a, x)$ univerzální dvojice $P^+$. Pak $P^+ \simeq \cat{Set}(a, -)$. Tedy $P^+(b) = \mathcal{P}(b)$ je stejně mohutná jako $\cat{Set}(a ,b)$. Pro $b= \mathcal{P}(a) to nefunguje: $|\mathcal{P}(b)| > |b| = |\mathcal{a}|$. Spor.
+5) Naopak funktor $P^+: \cat{Set} \rightarrow \cat{Set}$ nemá univerzální dvojici. Sporem mějme $(a, x)$ univerzální dvojice $P^+$. Pak $P^+ \simeq \cat{Set}(a, -)$. Tedy $P^+(b) = \mathcal{P}(b)$ je stejně mohutná jako $\cat{Set}(a ,b)$. Pro $b= \mathcal{P}(a)$ to nefunguje: $|\mathcal{P}(b)| > |b| = |\mathcal{a}|$. Spor.
 
 6) Zapomínající funktor $U: \cat{Div} \rightarrow \cat{Set}$ není reprezentovatelný.
 :::
@@ -454,11 +454,11 @@ Ať $\K, \H$ kategorie, pak jsou:
 
 - *izomorfní*, pokud existují funktory $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ takové, že $U \circ F = 1_{\K}, F \circ U = 1_{\H}$. Tedy jsou izomorfní jakožto objekty v kvazikategorii $\cat{CAT}$.
 
-- *ekvivalentní*, pokud existují $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ a přirozené ekvivalence $\nu: 1_\K \rightarrow U \circ F$, $\iotta: 1_\H \rightarrow F \circ U$.
+- *ekvivalentní*, pokud existují $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ a přirozené ekvivalence $\nu: 1_\K \rightarrow U \circ F$, $\iota: 1_\H \rightarrow F \circ U$.
 :::
 
 :::cviceni
-Ať $F, G, \nu, \iotta$ jako výše. Pak pro každé $a \in \ob\K$ je $(F(a), \nu_a)$ univerzální dvojice funktoru $\K(a, -) \circ U = \K(a, U(-)): \H \rightarrow \cat{Set}$. 
+Ať $F, G, \nu, \iota$ jako výše. Pak pro každé $a \in \ob\K$ je $(F(a), \nu_a)$ univerzální dvojice funktoru $\K(a, -) \circ U = \K(a, U(-)): \H \rightarrow \cat{Set}$. 
 :::
 
 :::definice
@@ -488,7 +488,7 @@ Kategorie $\K$ je *skeletárně malá*, pokud má skelet $S$, který je množino
 :::veta
 $\K, \H$ kategorie, $F: \K \rightarrow \H$ funktor, pak NTJE:
 
-1) existují $U: \H \rightarrow \K$ a přirozená ekvivalence $\nu: 1_\K \rightarrow U\circ F$, $\iotta 1_\H \rightarrow F \circ U$.
+1) existují $U: \H \rightarrow \K$ a přirozená ekvivalence $\nu: 1_\K \rightarrow U\circ F$, $\iota 1_\H \rightarrow F \circ U$.
 
 2) $F$ je věrný, úplný a esenciálně surjektivní.
 :::
