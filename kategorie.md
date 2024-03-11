@@ -33,6 +33,10 @@ statement-kinds:
         style: definition
         label: Příklad
         counter: none
+    cviceni:
+        style: definition
+        label: Cvičení
+        counter: none
     lemma:
         style: definition
         label: Lemma
@@ -391,3 +395,100 @@ ___
 \begin{center}
 Přednáška 4
 \end{center}
+
+___
+
+\begin{center}
+Přednáška 5
+\end{center}
+
+___
+
+\begin{center}
+Přednáška 6
+\end{center}
+
+:::cviceni
+At $\K$ kategorie, $F: \K \rightarrow \cat{Set}$. Pak $\H$, pro kterou $\ob \H = \{ (a, x) | a \in \ob \K; x \in F(a) \}$, $\H((a, x), (b, y)) = \{ \alpha \in \K(a ,b)| F(\alpha)(x) = y \}$, je kategorie. Navíc $(a, b) \in \ob \K$ je univerzální pro $F$, $\iff$ (a ,b) je *iniciální* objekt v $\H$, tj $\forall (b, y) \in \ob \H: |\H((a, x), (b, y))| = 1$.
+:::
+
+:::tvrzeni
+Ať $\K$ kategorie, $F \rightarrow \cat{Set}$, $a\in\ob\K$. Pak NTJE:
+
+1) existuje $x\in F(a)$ tak, že $(a, x)$ je univerzální dvojice pro $F$,
+
+2) existuje přirozená ekvivalence $\tau: \K(a, -) \rightarrow F$.
+:::
+
+:::proof
+Užitím Yonedova lemmatu I máme: 
+
+- (1) $\implies$ (2): Pro dané $x\in F(a)$ definujeme $\tau = \tau^x$.
+- (2) $\implies$ (1): pro dané $\tau: \K(a, -) \rightarrow F$ položím $x = \tau_a (1_a)$.
+
+Pak stačí si uvědomit, že $(a, x)$ je univerzální dvojice $\iff$ $\tau = \tau^x$ je přirozená ekvivalence.
+:::
+
+:::definice
+$\K$ kat, $F: \K \rightarrow \cat{Set}$. Pak je $F$ *reprezentovatelný*, pokud existuje $a \in \ob\K$ takové, že platí podmínky (1) a (2) z tvrzení výše. Univerzální dvojici $(a, x)$ pro $F$ se často říká *reprezentace* funktoru $F$.
+:::
+
+:::priklad
+1) $F = 1_{\cat{Set}}$ má reprezentaci $(1, 0) = (\{ \emptyset \} \emptyset )$. $F \simeq \cat{Set}(\{ \emptyset \}, -)$.
+
+2) Ať $\K = \cat{Grp}$, nebo $\K = \cat{Ab}$, $U: \k \rightarrow \cat{Set}$ buď zapomínající. Pak $U$ má reprezentaci $(\Z, 1)$. Tedy $\K(\Z, -) \simeq U$.
+
+3) $U: \cat{Ring} \rightarrow \cat{Set}$ zapomínající. Pak $U$ má reprezentaci $(\Z[x], x)$.
+
+4) Uvažujme $P^-: \cat{Set}^{op} \rightarrow \cat{Set}$. Pak má reprezentaci $(\{ 0, 1 \}, \{ 1 \})$
+
+5) Naopak funktor $P^+: \cat{Set} \rightarrow \cat{Set}$ nemá univerzální dvojici. Sporem mějme $(a, x)$ univerzální dvojice $P^+$. Pak $P^+ \simeq \cat{Set}(a, -)$. Tedy $P^+(b) = \mathcal{P}(b)$ je stejně mohutná jako $\cat{Set}(a ,b)$. Pro $b= \mathcal{P}(a) to nefunguje: $|\mathcal{P}(b)| > |b| = |\mathcal{a}|$. Spor.
+
+6) Zapomínající funktor $U: \cat{Div} \rightarrow \cat{Set}$ není reprezentovatelný.
+:::
+
+## Ekvivalence kategorií
+
+:::definice
+Ať $\K, \H$ kategorie, pak jsou:
+
+- *izomorfní*, pokud existují funktory $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ takové, že $U \circ F = 1_{\K}, F \circ U = 1_{\H}$. Tedy jsou izomorfní jakožto objekty v kvazikategorii $\cat{CAT}$.
+
+- *ekvivalentní*, pokud existují $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ a přirozené ekvivalence $\nu: 1_\K \rightarrow U \circ F$, $\iotta: 1_\H \rightarrow F \circ U$.
+:::
+
+:::cviceni
+Ať $F, G, \nu, \iotta$ jako výše. Pak pro každé $a \in \ob\K$ je $(F(a), \nu_a)$ univerzální dvojice funktoru $\K(a, -) \circ U = \K(a, U(-)): \H \rightarrow \cat{Set}$. 
+:::
+
+:::definice
+Ať $F: \K \rightarrow \H$ funktor. Pak je $F$ *esenciálně surjektivní*, pokud $\forall b \in\ob\H \exists a \in\ob\K: F(a) \simeq b$.
+:::
+
+:::definice
+Ať $\K$ kategorie, $\S \subset \ob\K$. Pak je $S$ *skelet* kategorie $\K$, pokud $\forall b \in \ob\K\exists! a \in S: a \simeq b$. Úplná podkategorie v $\K$ se pak nazývá *skeletární* podkategorie v $\K$.
+:::
+
+:::pozn
+Funktor vnoření skeletární podkategorie do $\K$ je prostý, úplný a esenciálně surjektivní. Axiom globálního výběru (ekvivalentní s GBC): Každá kategorie má skelet. Je to běžně příjímaný axiom v teorii kategorií.
+:::
+
+:::definice
+Kategorie $\K$ je *skeletárně malá*, pokud má skelet $S$, který je množinou.
+:::
+
+:::priklad
+1) $\K$ jsou konečně dimenzionální vektorové prostory nad $T$. Pak $\K$ je skeletárně malá.
+
+2) Lineární formy jsou ekvivalence kategorií.
+
+3) Ať $\mathcal{R}$ jednoobjektová peaditivní kategorie (tj okruh). Ať $\K$ je úplná podkategorie $\cat{Ab}^{\mathcal{R}}$ sestávající se z aditivních funtorů, tj $F: \mathcal{R}(*,*) \rightarrow \cat{Ab}(F(*), F(*))$ je homomorfismus grup s $+$. Pak $\K$ je ekvivalentní kategorii $\mathcal{R}-\cat{Mod}$ (levé $\mathcal{R}$ moduly a homomorfismy).
+:::
+
+:::veta
+$\K, \H$ kategorie, $F: \K \rightarrow \H$ funktor, pak NTJE:
+
+1) existují $U: \H \rightarrow \K$ a přirozená ekvivalence $\nu: 1_\K \rightarrow U\circ F$, $\iotta 1_\H \rightarrow F \circ U$.
+
+2) $F$ je věrný, úplný a esenciálně surjektivní.
+:::
