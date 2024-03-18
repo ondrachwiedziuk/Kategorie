@@ -443,6 +443,7 @@ $\K$ kat, $F: \K \rightarrow \cat{Set}$. Pak je $F$ *reprezentovatelný*, pokud 
 4) Uvažujme $P^-: \cat{Set}^{op} \rightarrow \cat{Set}$. Pak má reprezentaci $(\{ 0, 1 \}, \{ 1 \})$
 
 5) Naopak funktor $P^+: \cat{Set} \rightarrow \cat{Set}$ nemá univerzální dvojici. Sporem mějme $(a, x)$ univerzální dvojice $P^+$. Pak $P^+ \simeq \cat{Set}(a, -)$. Tedy $P^+(b) = \mathcal{P}(b)$ je stejně mohutná jako $\cat{Set}(a ,b)$. Pro $b= \mathcal{P}(a)$ to nefunguje: $|\mathcal{P}(b)| > |b| = |\mathcal{a}|$. Spor.
+5) Naopak funktor $P^+: \cat{Set} \rightarrow \cat{Set}$ nemá univerzální dvojici. Sporem mějme $(a, x)$ univerzální dvojice $P^+$. Pak $P^+ \simeq \cat{Set}(a, -)$. Tedy $P^+(b) = \mathcal{P}(b)$ je stejně mohutná jako $\cat{Set}(a ,b)$. Pro $b= \mathcal{P}(a)$ to nefunguje: $|\mathcal{P}(b)| > |b| = |\mathcal{a}|$. Spor.
 
 6) Zapomínající funktor $U: \cat{Div} \rightarrow \cat{Set}$ není reprezentovatelný.
 :::
@@ -455,9 +456,11 @@ Ať $\K, \H$ kategorie, pak jsou:
 - *izomorfní*, pokud existují funktory $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ takové, že $U \circ F = 1_{\K}, F \circ U = 1_{\H}$. Tedy jsou izomorfní jakožto objekty v kvazikategorii $\cat{CAT}$.
 
 - *ekvivalentní*, pokud existují $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ a přirozené ekvivalence $\nu: 1_\K \rightarrow U \circ F$, $\iota: 1_\H \rightarrow F \circ U$.
+- *ekvivalentní*, pokud existují $F: \K \rightarrow \H$, $U: \H \rightarrow \K$ a přirozené ekvivalence $\nu: 1_\K \rightarrow U \circ F$, $\iota: 1_\H \rightarrow F \circ U$.
 :::
 
 :::cviceni
+Ať $F, G, \nu, \iota$ jako výše. Pak pro každé $a \in \ob\K$ je $(F(a), \nu_a)$ univerzální dvojice funktoru $\K(a, -) \circ U = \K(a, U(-)): \H \rightarrow \cat{Set}$. 
 Ať $F, G, \nu, \iota$ jako výše. Pak pro každé $a \in \ob\K$ je $(F(a), \nu_a)$ univerzální dvojice funktoru $\K(a, -) \circ U = \K(a, U(-)): \H \rightarrow \cat{Set}$. 
 :::
 
@@ -486,9 +489,22 @@ Kategorie $\K$ je *skeletárně malá*, pokud má skelet $S$, který je množino
 :::
 
 :::veta
-$\K, \H$ kategorie, $F: \K \rightarrow \H$ funktor, pak NTJE:
+Ať $\K, \H$ kategorie, $F: \K \rightarrow \H$ funktor, pak NTJE:
 
+1) existují $U: \H \rightarrow \K$ a přirozená ekvivalence $\nu: 1_\K \rightarrow U\circ F$, $\iota 1_\H \rightarrow F \circ U$.
 1) existují $U: \H \rightarrow \K$ a přirozená ekvivalence $\nu: 1_\K \rightarrow U\circ F$, $\iota 1_\H \rightarrow F \circ U$.
 
 2) $F$ je věrný, úplný a esenciálně surjektivní.
 :::
+
+:::proof
+1) $\implies$ 2: $F$ je ese. surj.: pro každé $b \in \ob\H$ existuje $c_b: b \rightarrow F(U(b))$ izomorfismus v $\H$. $F$ je věrný: Ať $\alpha, \beta \in \K(a, b), \alpha \neq \beta$. Pak máme $a \xrightarrow{\nu_a} U(F(a)) \xrightarrow{U(F(\alpha))} U(F(b)) \xrightarrow{c_b^{-1}} b$ a $a \xrightarrow{\nu_a} U(F(a)) \xrightarrow{U(F(\beta))} U(F(b)) \xrightarrow{c_b^{-1}} b$. $F$ je úplný: Ať $b \in \ob\H$, $c_b: b \rightarrow F(U(b))$. Pak $F(U(b)) \simeq b$. Tedy $F$ je úplný. (chce celkově lépe sepsat a dodělat)
+:::
+
+___
+
+\begin{center}
+Přednáška 7
+\end{center}
+
+
